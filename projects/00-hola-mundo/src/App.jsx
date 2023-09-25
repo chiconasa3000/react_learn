@@ -8,21 +8,24 @@ export function App(){
             <TwitterFollowCard 
                 formatUserName={formatUserName} 
                 isFollowing 
-                userName="langchain-ai" 
-                name="langchain-ai"
-            />
+                userName="langchain-ai"
+            >
+                <strong>langchain-ai</strong>
+            </TwitterFollowCard>
             <TwitterFollowCard 
                 formatUserName={formatUserName}
                 isFollowing
                 userName="chiconasa3000"
-                name="christiaasdasdasdasdn suca velando"
-            />
+            >
+                <strong>christian suca velando</strong>
+            </TwitterFollowCard>
             <TwitterFollowCard
                 formatUserName={formatUserName}
                 isFollowing={false}
                 userName="midudev"
-                name="Miguel Ángel Durán"
-            />
+            >
+                <strong>Miguel Ángel Durán</strong>
+            </TwitterFollowCard>
         </div>
     )
 }
