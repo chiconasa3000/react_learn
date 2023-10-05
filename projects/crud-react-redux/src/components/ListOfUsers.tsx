@@ -18,6 +18,7 @@ import { useAppSelector } from "../hooks/store";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/solid";
 import { Icon } from "@tremor/react";
 import { useState } from "react";
+import { useUserActions } from "../hooks/useUserActions";
 
 type user = {
 	id: string;
@@ -27,9 +28,16 @@ type user = {
 };
 
 export default function ListOfUsers() {
+	//actions
+	const { removeUser } = useUserActions();
+
+	//list of user from the store
 	const developers = useAppSelector((state) => state.users);
+
+	//sate of list of names
 	const [selectedNames, setSelectedNames] = useState<string[]>([]);
 
+	//filter function
 	const isUserSelected = (user: user) =>
 		selectedNames.includes(user.name) || selectedNames.length === 0;
 
@@ -87,7 +95,7 @@ export default function ListOfUsers() {
 										<button type="button">
 											<Icon size="sm" icon={PencilIcon} />
 										</button>
-										<button type="button">
+										<button onClick={() => removeUser(item.id)} type="button">
 											<Icon size="sm" icon={TrashIcon} />
 										</button>
 									</TableCell>
