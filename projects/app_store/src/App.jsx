@@ -1,11 +1,22 @@
 import TheGallery from './Gallery';
-import {Profile as TheProfile} from './Gallery';
+import {Avatar as TheProfile} from './Gallery';
 
 export default function App(){
   return (
     <div>
       <TheGallery/>
-      <TheProfile/>
+      <TheProfile 
+        person={{
+          name: "Lin Lanying",
+          imageId: "1bX5QH6"
+        }}
+        size={50}
+        theme={{
+          backgroundColor: "black",
+          color: "pink",
+        }}
+
+      />
     </div>
   );
 }
